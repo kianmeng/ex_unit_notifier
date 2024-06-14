@@ -2,7 +2,7 @@ defmodule ExUnitNotifier.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/navinpeiris/ex_unit_notifier"
-  @version "1.3.0"
+  @version "1.3.1"
 
   def project do
     [
@@ -20,7 +20,9 @@ defmodule ExUnitNotifier.MixProject do
   end
 
   def application do
-    [applications: []]
+    [
+      extra_applications: [:logger]
+    ]
   end
 
   defp deps do
@@ -35,7 +37,6 @@ defmodule ExUnitNotifier.MixProject do
       extras: [{:"LICENSE.md", [title: "License"]}, "README.md"],
       main: "readme",
       source_url: @source_url,
-      formatters: ["html"],
       api_reference: false
     ]
   end
